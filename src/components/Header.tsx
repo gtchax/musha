@@ -11,7 +11,7 @@ const Header = () => {
         <span className="flex space-x-2">
           <Link
             to="login"
-            className="flex bg-teal items-center text-vintage px-3 font-bold rounded-full shadow-lg"
+            className="flex bg-teal items-center text-vintage px-4 font-bold rounded-full shadow-lg"
           >
             Sign In
           </Link>

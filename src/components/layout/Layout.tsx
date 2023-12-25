@@ -1,6 +1,7 @@
-import React from 'react'
+import React from "react";
 import Header from "../Header";
-import Hero from '../Hero';
+import Hero from "../Hero";
+import Footer from "../Footer";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -8,6 +9,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <Header />
       <Hero />
       {children}
+      <Footer />
     </div>
   );
 };
