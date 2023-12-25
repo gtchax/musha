@@ -2,7 +2,11 @@ import Layout from "../components/layout/Layout"
 
 const Home = () => {
   return (
-    <Layout>Home</Layout>
+    <Layout>
+      <div className="container mx-auto py-8">
+        Home
+      </div>
+    </Layout>
   )
 }
 
