@@ -3,8 +3,27 @@ import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Private from "./components/Private";
+import {useEffect} from 'react'
 
 const AppRouter = () => {
+
+  const onBlur = () => {
+    document.title = 'We miss you | Musha'
+  }
+  const onFocus = () => {
+    document.title = 'Musha'
+  }
+
+  useEffect(() => {
+    window.addEventListener('blur', onBlur)
+    window.addEventListener('focus', onFocus)
+  
+    return () => {
+     window.removeEventListener('blur', onBlur)
+     window.removeEventListener('focus', onFocus)
+    }
+  }, [])
+  
   return (
     <Routes>
       <Route index element={<Home />} />
