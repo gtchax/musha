@@ -9,7 +9,12 @@ type TRegisterData = {
   email: string;
 };
 const Signup = () => {
-  const { register, watch, handleSubmit, formState: {errors} } = useForm<TRegisterData>();
+  const {
+    register,
+    watch,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<TRegisterData>();
 
   const onSubmit = handleSubmit((data) => {
     console.log(data);
@@ -40,11 +45,16 @@ const Signup = () => {
                 <input
                   type="text"
                   {...register("firstname", {
-                    required: "This field is required",
+                    required: "Your firstname is required",
                   })}
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Your firstname is required"
                 />
+                {errors.firstname && (
+                  <span className="text-red-500 p-2">
+                    {errors.firstname.message}
+                  </span>
+                )}
               </div>
               <div>
                 <label
@@ -61,6 +71,11 @@ const Signup = () => {
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Lastname"
                 />
+                 {errors.lastname && (
+                  <span className="text-red-500 p-2">
+                    {errors.lastname.message}
+                  </span>
+                )}
               </div>
               <div>
                 <label
@@ -77,6 +92,11 @@ const Signup = () => {
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="name@mail.com"
                 />
+                 {errors.email && (
+                  <span className="text-red-500 p-2">
+                    {errors.email.message}
+                  </span>
+                )}
               </div>
               <div>
                 <label
@@ -97,6 +117,11 @@ const Signup = () => {
                   placeholder="••••••••"
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
+                 {errors.password && (
+                  <span className="text-red-500 p-2">
+                    {errors.password.message}
+                  </span>
+                )}
               </div>
               <div>
                 <label
@@ -120,6 +145,11 @@ const Signup = () => {
                   placeholder="••••••••"
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
+                 {errors.confirmPassword && (
+                  <span className="text-red-500 p-2">
+                    {errors.confirmPassword.message}
+                  </span>
+                )}
               </div>
               <div className="flex items-start">
                 <div className="flex items-center h-5">
