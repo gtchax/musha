@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useSignupMutation } from "../lib/api/auth";
-import { toast } from "sonner"
+import { toast } from "sonner";
 
 type TRegisterData = {
   firstname: string;
@@ -21,16 +21,17 @@ const Signup = () => {
   const [signup] = useSignupMutation();
 
   const onSubmit = handleSubmit((data) => {
-    toast('Sign up request made', {
-      description: "Demo toast for signup"
-    })
-    // signup(data)
-    //   .then((data) => console.log(data))
-    //   .catch((err) => console.log(err));
+    toast("Sign up request made", {
+      description: "Demo toast for signup",
+    });
+    signup(data)
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
   });
   return (
     <section className=" min-h-screen w-full md:flex">
-      <div className=" bg-cover bg-center md:bg-[url('/tree.jpg')] h-full flex-1 bg-vintage flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+      <div className="bg-cover bg-slate-600 bg-blend-overlay bg-center md:bg-[url('/tree.jpg')] min-w-[19rem] lg:min-w-[25rem] "></div>
+      <div className="  h-full flex-1 bg-vintage flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         {/* <Link
           to='/'
           className="flex items-center mb-6 text-2xl font-semibold text-brown"
@@ -38,54 +39,57 @@ const Signup = () => {
 
           Musha
         </Link> */}
-        <div className="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0 ">
+        <div className="w-full   md:mt-0 sm:max-w-md xl:p-0 ">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1 className="text-xl font-bold leading-tight tracking-tight text- md:text-2xl ">
               Create and account
             </h1>
             <form className="space-y-4 md:space-y-6" onSubmit={onSubmit}>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block mb-2 text-sm font-medium text-gray-900 "
-                >
-                  Your firstname
-                </label>
-                <input
-                  type="text"
-                  {...register("firstname", {
-                    required: "Your firstname is required",
-                  })}
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Your firstname is required"
-                />
-                {errors.firstname && (
-                  <span className="text-red-500 p-2">
-                    {errors.firstname.message}
-                  </span>
-                )}
+              <div className="flex flex-col md:flex-row md:justify-between">
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block mb-2 text-sm font-medium text-gray-900 "
+                  >
+                    Your firstname
+                  </label>
+                  <input
+                    type="text"
+                    {...register("firstname", {
+                      required: "Your firstname is required",
+                    })}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Firstname"
+                  />
+                  {errors.firstname && (
+                    <span className="text-red-500 p-2">
+                      {errors.firstname.message}
+                    </span>
+                  )}
+                </div>
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block mb-2 text-sm font-medium text-gray-900 "
+                  >
+                    Your lastname
+                  </label>
+                  <input
+                    type="text"
+                    {...register("lastname", {
+                      required: "Your lastname is required",
+                    })}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Lastname"
+                  />
+                  {errors.lastname && (
+                    <span className="text-red-500 p-2">
+                      {errors.lastname.message}
+                    </span>
+                  )}
+                </div>
               </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block mb-2 text-sm font-medium text-gray-900 "
-                >
-                  Your lastname
-                </label>
-                <input
-                  type="text"
-                  {...register("lastname", {
-                    required: "Your lastname is required",
-                  })}
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Lastname"
-                />
-                {errors.lastname && (
-                  <span className="text-red-500 p-2">
-                    {errors.lastname.message}
-                  </span>
-                )}
-              </div>
+
               <div>
                 <label
                   htmlFor="email"
@@ -186,7 +190,7 @@ const Signup = () => {
               </div>
               <button
                 type="submit"
-                className="w-full text-white bg-brown focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-800"
+                className="w-full text-white bg-[#546e96] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-800"
               >
                 Create an account
               </button>

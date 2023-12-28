@@ -2,7 +2,7 @@
 const Hero = () => {
   return (
     <div className="bg-brown text-vintage pb-16 ">
-        <div className="container mx-auto flex flex-col gap-2">
+        <div className="px-4 lg:container mx-auto flex flex-col gap-2">
             <h1 className="text-5xl text-vintage font-bold">
                 Find your next stay
             </h1>

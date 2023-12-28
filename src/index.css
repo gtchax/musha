@@ -4,4 +4,6 @@
 
 body {
   @apply bg-vintage;
+  overscroll-behavior: none;
+  
 }
