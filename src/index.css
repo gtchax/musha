@@ -2,8 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-vintage;
-  overscroll-behavior: none;
-  
+@layer base {
+  body {
+    @apply bg-vintage;
+    overscroll-behavior: none;
+  }
+}
+
+@layer components {
+  .active {
+    @apply flex gap-2 text-vintage px-3 py-1 rounded-md bg-[#2d2d2d] md:w-44;
+  }
+
+  /* .pending {
+    @apply flex gap-2 px-3 py-1 rounded-md w-18 md:w-44;
+  } */
+
+  #sidebar a {
+    @apply flex gap-2 px-3 py-1 rounded-md hover:bg-brown md:w-44;
+  }
 }

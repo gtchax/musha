@@ -11,7 +11,7 @@ const DashSidebar = () => {
     // navigate("/admin/login");
   };
   return (
-    <aside className="shadow-md h-screen w-20 md:w-52 transition-all border-r border-black ">
+    <aside id="sidebar" className="h-screen w-20 md:w-52 transition-all border-r border-black">
       <div className="flex flex-col py-[13px] px-2">
         <div>
           <h1 className="text-3xl font-bold">M</h1>
@@ -19,7 +19,7 @@ const DashSidebar = () => {
           <h1 className="hidden md:flex justify-center font-medium pt-3 text-center"></h1>
         </div>
       </div>
-      <div className="flex flex-col gap-6 py-4 px-4 items-start">
+      <div className="flex flex-col gap-6 pb-4 pt-20 px-4 items-start">
         <DashLink
           to="/dashboard"
           text="Dashboard"
@@ -81,7 +81,7 @@ const DashSidebar = () => {
           }
         />
         <DashLink
-          to="/"
+          to="/dashboard/places"
           text="Places"
           icon={
             <svg
